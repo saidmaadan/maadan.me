@@ -1,0 +1,37 @@
+ <%= form_for @project, :html => { :multipart => true } do |f| %>
+    <%= render "shared/errors", object: @project %>
+    
+      <div class='form-group'>
+        <%= f.label :name %>
+        <%= f.text_field :name, autofocus: true, placeholder: "Project title", class: "form-control" %>
+      </div>
+
+      
+      <div class='form-group'>
+        <%= f.label :description %>
+        <%= f.text_area :description, cols: 40, rows: 7, placeholder: "Your project description",class: "form-control" %>
+      </div>
+      
+      <div class='form-group'>
+        <%= f.label :github %>
+        <%= f.text_field :github, class: "form-control", placeholder: "https://" %>
+      </div>
+      
+      <div class='form-group'>
+        <%= f.label :url %>
+        <%= f.text_field :url, class: "form-control", placeholder: "http://" %>
+      </div>
+      
+      <div class='form-group'>
+        <%= f.label :screenshot %>
+        <%= f.file_field :screenshot, class: "form-control" %>
+      </div>
+
+      
+      <div class='form-group'>
+        <%= f.submit class: 'btn btn-info' %> <%= link_to "Cancel", projects_path, class: 'btn btn-default' %>
+      </div>
+     
+    
+  <% end %>
+ 
