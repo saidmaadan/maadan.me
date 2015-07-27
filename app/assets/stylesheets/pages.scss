@@ -604,3 +604,38 @@ body.has-active-menu {
     }
   }
 }
+
+.about-main{
+  width: 100%;
+  height: 100%;
+  display: inline;
+  .about-left{
+    width: 50%;
+    height: 100%;
+    float: left;
+    background-image: url("https://s3.amazonaws.com/maadan/dev7.jpg");
+  // // right: 0;
+  // left: 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .about-right{
+    width: 50%;
+    float: right;
+    .about-content{
+      width: 100%;
+      margin-top: 10px;
+      margin-left: 20px;
+      margin-left: 20px;
+      p{
+        font-size: 1.5em;
+        font-weight: 400;
+        font-family: "Shift", sans-serif;
+        color: gray;
+      }
+    }
+
+  }
+}
