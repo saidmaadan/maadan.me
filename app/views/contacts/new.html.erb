@@ -1,0 +1,42 @@
+<div class='container'>
+	<div class='row contact-main'>
+		<h2 class='text-center'>Get In Touch</h2>
+
+		<div class='col-sm-6 contact-contact'>
+			<div class='well'>
+				<%= form_for @contact do |f| %>
+					<div class='form-group'>
+						<%= f.label :name %>
+						<%= f.text_field :name, class: 'form-control' %>
+					</div>
+					<div class='form-group'>
+						<%= f.label :email %>
+						<%= f.text_field :email, class: 'form-control' %>
+					</div>
+					<div class='form-group'>
+						<%= f.label :website %>
+						<%= f.text_field :website, class: 'form-control' %>
+					</div>
+					<div class='form-group'>
+						<%= f.label :comments %>
+						<%= f.text_area :comments, class: 'form-control', cols: 40, rows: 7 %>
+					</div>
+					<div class='form-group'>
+						<%= f.submit 'Send Message', class: 'btn btn-danger' %>
+						
+					</div>
+				<% end %>
+			</div>
+		</div>
+		<div class='col-sm-6 contact-map'>
+			<div id='map'></div>
+		</div>
+	</div>
+</div>
+
+<script>
+L.mapbox.accessToken = 'pk.eyJ1Ijoic2FpZG1hYWRhbiIsImEiOiI1YmM2NjcwMzVlNWJiZjViMDQzZjQ0MGMwODYyMWQ0MSJ9.Rn0L1ji-g3I_4x0GyuMKhg';
+L.mapbox.map('map', 'mapbox.streets', {
+    scrollWheelZoom: false
+}).setView([30.2500,-97.7500], 14);
+</script>
