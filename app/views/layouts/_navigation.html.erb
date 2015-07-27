@@ -1,5 +1,5 @@
 <%# navigation styled for Bootstrap 3.0 %>
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<!-- <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -8,12 +8,89 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to 'Home', root_path, class: 'navbar-brand' %>
+      <%#= link_to 'Home', root_path, class: 'navbar-brand' %>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <%= render 'layouts/navigation_links' %>
+        <%#= render 'layouts/navigation_links' %>
       </ul>
     </div>
   </div>
 </nav>
+ -->
+
+
+ <div id="o-wrapper" class="o-wrapper">
+
+  <!-- <main class="o-content"> -->
+    <!-- <div class="o-container"> -->
+      
+      <div class="c-buttons">
+       <!--  <button id="c-button--slide-left" class="c-button">Slide Left</button> -->
+        <button id="c-button--slide-left" class="c-hamburger c-hamburger--htla pull-right">
+          <span>toggle menu</span>
+        </button>
+      </div>
+
+    <!-- </div> -->
+  <!-- </main> -->
+
+ 
+</div><!-- /o-wrapper -->
+
+<nav id="c-menu--slide-left" class="c-menu c-menu--slide-left">
+  <button class="c-menu__close">&larr; Close Menu</button>
+  <ul class="c-menu__items">
+    <li class="c-menu__item"><%= link_to 'Maadan', root_path, class: "c-menu__link" %></li>
+    <li class="c-menu__item"><%= link_to 'About', about_path, class: "c-menu__link" %></li>
+    <li class="c-menu__item"><a href="#" class="c-menu__link">Services</a></li>
+    <li class="c-menu__item"><a href="#" class="c-menu__link">Work</a></li>
+    <li class="c-menu__item"><a href="#" class="c-menu__link">Contact</a></li>
+  </ul>
+</nav>
+
+
+<div id="c-mask" class="c-mask"></div>
+
+
+<script>
+  (function() {
+    "use strict";
+
+    var slideLeft = new Menu({
+        wrapper: '#o-wrapper',
+        type: 'slide-left',
+        menuOpenerClass: '.c-hamburger',
+        maskId: '#c-mask'
+    });
+
+    var slideLeftBtn = document.querySelector('#c-button--slide-left');
+    
+    slideLeftBtn.addEventListener('click', function(e) {
+      e.preventDefault;
+      slideLeft.open();
+    });
+
+
+    var toggles = document.querySelectorAll(".c-hamburger");
+      for (var i = toggles.length - 1; i >= 0; i--) {
+        var toggle = toggles[i];
+        toggleHandler(toggle);
+    };
+    function toggleHandler(toggle) {
+      toggle.addEventListener( "click", function(e) {
+        e.preventDefault();
+        (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
+      });
+    }
+
+     
+  })();
+</script>
+
+
+
+
+
+
+
