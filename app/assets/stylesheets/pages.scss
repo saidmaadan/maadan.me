@@ -60,7 +60,7 @@ body {
 
 body {
   color: #6d6d6d;
-  background-color: #fff;
+  background-color: #ddd;
   font-family: "Oxygen", Helvetica, sans-serif;
   font-size: 14px;
   line-height: 1.8;
@@ -574,6 +574,8 @@ body.has-active-menu {
 .jumbotron{
   width: 100%;
   height: 100%;
+  top: 0;
+  bottom: 0;
   background-image: url("https://s3.amazonaws.com/inventtive/img/dev3.jpg");
   // position: relative;
   // // right: 0;
@@ -584,6 +586,21 @@ body.has-active-menu {
   background-size: cover;
   // overflow: hidden;
   .top-home{
-    margin-top: 100px;
+     position: relative;
+     top: 25%;
+     bottom: 30%;
+    h1{
+      font-size: 5em;
+      font-weight: 900;
+      font-family: "Shift", sans-serif;
+      color: #d9534f;
+    }
+    p{
+      margin-top: -20px;
+      font-size: 2.5em;
+      font-weight: 900;
+      font-family: "Shift", sans-serif;
+      color: gray;
+    }
   }
 }
