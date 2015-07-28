@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150727154711) do
+ActiveRecord::Schema.define(version: 20150728182750) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name"
@@ -21,6 +21,20 @@ ActiveRecord::Schema.define(version: 20150727154711) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "developers", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "username"
+    t.boolean  "admin",           default: false
+    t.string   "slug"
+    t.string   "auth_token"
+  end
+
+  add_index "developers", ["slug"], name: "index_developers_on_slug", unique: true
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false

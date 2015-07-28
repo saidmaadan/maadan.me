@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :developers
   get '/contact' => 'contacts#new'
   resources :contacts
   resources :projects
