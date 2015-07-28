@@ -15,17 +15,33 @@
 		font-weight: 900;
 		padding-bottom: 14px;
 	}
+}
+.contact-address{
+	margin: 10px auto 0;
+}
+.contact-main-top{
+	width: 100%;
+	height: 100%;
+	margin-top: 5px;
 	.contact-contact{
 		height: 450px;
 		margin-bottom: 30px;
+		margin-top: 20px;
+
 	}
 	.contact-map{
 		height: 550px;
 		margin-bottom: 30px;
+		iframe{
+			width: 100%;
+			height: 550px;
+			margin-top: 20px;
+		}
 		
-		#map { position:absolute; top:0; bottom:0; width:100%; height: 520px; }
+		#map iframe { position:absolute; top:0; bottom:0; width:100%; height: 520px; }
 	}
 }
+
 
 /* =============================================================================
   COMPONENT

@@ -5,28 +5,27 @@
 	<div class='row'>
 		<div class='col-sm-7 col-xs-12'>
 			<div class="component">
-		        <a href="https://facebook.com/saidmaadan" class="icon icon-mono facebook">facebook</a>
-		        <a href="https://twitter.com/saidmaadan" class="icon icon-mono twitter">twitter</a>
-		        <a href="https://plus.google.com/+SaidMaadan-ms" class="icon icon-mono googleplus">google+</a>
-		        <a href="https://github.com/saidmaadan" class="icon icon-mono github">github</a>
-		        <a href="https://linkedin.com/in/saidmaadan" class="icon icon-mono rss">linkedin</a>
+		        <a href="https://facebook.com/saidmaadan" target="_blank" class="icon icon-mono facebook">facebook</a>
+		        <a href="https://twitter.com/saidmaadan" target="_blank" class="icon icon-mono twitter">twitter</a>
+		        <a href="https://plus.google.com/+SaidMaadan-ms" target="_blank" class="icon icon-mono googleplus">google+</a>
+		        <a href="https://github.com/saidmaadan" target="_blank" class="icon icon-mono github">github</a>
+		        <a href="https://linkedin.com/in/saidmaadan" target="_blank" class="icon icon-mono rss">linkedin</a>
 		     </div>
 		</div>
 		<div class='col-sm-4 col-xs-12'>
-			<div class='contact-address'>
-				<p>
-					12800 Harrisglenn drive, <br> Austin, TX 78753, USA
-				</p>
+			<div class='contact-address text-center'>
+				
 				<i class='fa fa-phone '></i> 240-716-9907<br>
 				<a href="mailto:said@maadan.me?Subject=Hello" target="_top"><i class='fa fa-envelope '></i> said[at]maadan.me</a>
 			</div>
 		</div>
 		<div class='col-sm-1'></div>
 	</div>
+	<hr>
 </div>
 
 <div class='container'>
-	<div class='row contact-main'>
+	<div class='row contact-main-top'>
 		
 		<div class='col-sm-6 contact-contact'>
 			<div class='well'>
@@ -55,14 +54,14 @@
 			</div>
 		</div>
 		<div class='col-sm-6 contact-map'>
-			<div id='map'></div>
+			<div id='map'>
+				<iframe
+				  
+				  frameborder="0" style="border:0"
+				  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB9C6EQog9vhhMKUOtl4Y8EsbNKv1BApPQ
+				    &q=12800+Harrisglenn+Drive,Austin,WA+78753&zoom=14" allowfullscreen>
+				</iframe>
+			</div>
 		</div>
 	</div>
 </div>
-
-<script>
-L.mapbox.accessToken = 'pk.eyJ1Ijoic2FpZG1hYWRhbiIsImEiOiI1YmM2NjcwMzVlNWJiZjViMDQzZjQ0MGMwODYyMWQ0MSJ9.Rn0L1ji-g3I_4x0GyuMKhg';
-L.mapbox.map('map', 'mapbox.streets', {
-    scrollWheelZoom: false
-}).setView([30.2500,-97.7500], 14);
-</script>
