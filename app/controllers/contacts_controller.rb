@@ -13,7 +13,7 @@ class ContactsController < ApplicationController
 			body = params[:contact][:comments]
 
 			ContactMailer.contact_email(name, email, website, body).deliver
-			flash[:notice] = "Message sent succefully, We'll get back too you as soon as possible"
+			flash[:notice] = "Thanks for reaching out. Your message sent succefully, We'll get back too you as soon as possible"
 			redirect_to contact_path
 		else
 			flash[:danger] = 'Error occured, message could not be sent.'

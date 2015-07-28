@@ -1,3 +1,6 @@
 class Contact < ActiveRecord::Base
-	validates :name, :email, :comments, presence: true
+	validates :name, presence: true
+	validates :email, presence: true,
+                  format: /\A\S+@\S+\z/
+    validates :comments, length: { minimum: 20 }
 end

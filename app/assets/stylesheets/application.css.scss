@@ -12,4 +12,14 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+ @import "contacts";
+ @import "projects";
+ @import "pages";
+ @import "lightbox";

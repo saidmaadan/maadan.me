@@ -303,7 +303,7 @@ img {
 .c-menu--slide-left .c-menu__item{
   display: block;
   text-align: center;
-  border-top: solid 1px #b5dbe9;
+  border-top: solid 1px #68b9ea;
   border-bottom: solid 1px #3184a1;
 }
 .c-menu--slide-left .c-menu__item:first-child{
@@ -638,4 +638,18 @@ body.has-active-menu {
     }
 
   }
+}
+footer{
+  border-top: solid 2px #68b9ea;
+  margin-top:250px;
+  text-align: center;
+  color: #000;
+  .footer{
+    margin-top:15px;
+    font-size: 1.3em;
+    a{
+    color: #d9534f;
+    } 
+  } 
+  
 }

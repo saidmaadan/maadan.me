@@ -6,6 +6,7 @@ class ProjectsController < ApplicationController
 
 
   def show
+  	@projects = Project.order("created_at DESC").limit(3)
     @project = Project.friendly.find(params[:id])
   end
     

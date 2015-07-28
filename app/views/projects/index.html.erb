@@ -1,10 +1,32 @@
-
 <div class='container'>
 	<div class='row project-home'>
-		<div class='col-sm-12'>
-			<% @projects.each do |project| %>
-			 <%= image_tag project.screenshot_url %>
-			<% end %>
-		</div>
+		<% @projects.each_slice(3) do |project| %>
+			<% project.each do |project| %>
+				<div class="col-sm-4 col-xs-12">
+					<h3 class='text-center'><%= link_to project.name, project %></h3>
+					<div class="photo photo-type-line">
+	            		<a href="<%= project.screenshot.url  %>"  class="photo-hover" data-lightbox="my-images" data-title="<%= project.name %>">
+		              	<div class="photo-info">
+		                	<div class="headline"><%= project.name %></div>
+		                	<div class="line"></div>
+		                	<div class="desc"><%= truncate(project.description, length: 180, separator: ' ') %>
+		                		<h5 class='text-center'>Built With:</h5>
+		                		<kbd><%= project.builtwith %></kbd><br>
+		                		Live At: <%= project.url %>
+
+		                	</div>
+		              	</div>
+
+		              	<div class="mask"></div>
+		            	</a>
+		            	<div class="photo-img">
+
+		            		<%= image_tag project.screenshot.url, class: 'img-responsive', style: "width:100%;height:300px;margin:auto;" %>
+		            	</div>
+	          		</div>
+				</div>	
+	    	<% end %>
+		<% end %><br>
 	</div>
 </div>
+
