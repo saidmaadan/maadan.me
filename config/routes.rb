@@ -2,10 +2,16 @@ Rails.application.routes.draw do
 
   resources :developers
   get '/contact' => 'contacts#new'
+  
   resources :contacts
+
   resources :projects
+
   root "pages#home"
   get "/about" => "pages#about"
+
+  resource :session
+  get "signin" => "sessions#new"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
