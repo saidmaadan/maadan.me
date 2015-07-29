@@ -1,5 +1,8 @@
 class ProjectsController < ApplicationController
-
+  #before_action :require_signin, except: [:new, :create]
+  # before_action :correct_user, only: [:edit, :update]
+  before_action :require_admin, except: [:index, :show]
+	
 	def index
 		@projects = Project.all
 	end

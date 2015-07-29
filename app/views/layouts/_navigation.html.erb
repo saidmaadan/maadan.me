@@ -45,6 +45,10 @@
     <li class="c-menu__item"><%= link_to ' About', about_path, class: "c-menu__link fa fa-male " %></li>
     <li class="c-menu__item"><%= link_to ' Projects', projects_path, class: "c-menu__link fa fa-database" %></li>
     <li class="c-menu__item"><%= link_to ' Contact', contact_path, class: "c-menu__link fa fa-envelope" %></li>
+    <% if current_developer %>
+      <li class="c-menu__item"><%= link_to ' Sign Out', session_path, method: :delete, class: "c-menu__link fa fa-cut " %></li>
+    <% end %>
+     
   </ul>
   <footer>
     <div class='footer'>

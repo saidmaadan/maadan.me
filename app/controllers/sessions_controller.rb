@@ -4,15 +4,15 @@ class SessionsController < ApplicationController
   end
 
   def create
-	  if user = User.authenticate(params[:email], params[:password])
-	    session[:user_id] = user.id
+	  if developer = Developer.authenticate(params[:email], params[:password])
+	    session[:developer_id] = developer.id
 	    # if params[:remember_me]
-	    #   cookies.permanent[:auth_token] = user.auth_token
+	    #   cookies.permanent[:auth_token] = developer.auth_token
 	    # else
-	    #   cookies[:auth_token] = user.auth_token
+	    #   cookies[:auth_token] = developer.auth_token
 	    # end
-	    flash[:notice] = "Welcome back, #{user.name}!"
-	    redirect_to (session[:intended_url] || user)
+	    flash[:notice] = "Welcome back, #{developer.name}!"
+	    redirect_to (session[:intended_url] || developer)
 	    session[:intended_url] = nil
 	  else
 	    flash.now[:alert] = "Invalid email/password combination!"
@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
 
   def destroy
     # cookies.delete(:auth_token)
-    session[:user_id] = nil
+    session[:developer_id] = nil
     redirect_to root_url, notice: "You're now signed out!"
   end
 end

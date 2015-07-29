@@ -1,5 +1,5 @@
-<%= form_for(@user) do |f| %>
-  <%= render "shared/errors", object: @user %>
+<%= form_for(@developer) do |f| %>
+  <%= render "shared/errors", object: @developer %>
 
       <div class="form-group">
         <%= f.text_field :name, size: 50, autofocus: true, placeholder: "Your Full Name", class: "form-control" %>
@@ -23,7 +23,7 @@
       </div>
 
       <div class="form-group">
-        <% if @user.new_record? %>
+        <% if @developer.new_record? %>
           <%= f.submit "Create Account", class: "btn btn-info" %>
         <% else %>
           <%= f.submit "Update Account", class: "btn btn-info" %>
