@@ -6,5 +6,7 @@ class Comment < ActiveRecord::Base
                   format: /\A\S+@\S+\z/
 	validates :remark, length: { minimum: 4 }
 
-
+	def gravatar_id
+	    Digest::MD5::hexdigest(email.downcase)
+	end
 end

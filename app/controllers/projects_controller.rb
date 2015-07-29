@@ -10,7 +10,7 @@ class ProjectsController < ApplicationController
 
   def show
   	@comment = Comment.new
-  	@projects = Project.all.limit(2).shuffle
+  	@projects = Project.all.limit(1).shuffle
     @project = Project.friendly.find(params[:id])
     @comment.project_id = @project_id
     @comments = Comment.where(project_id: @project.id).order("created_at DESC")
