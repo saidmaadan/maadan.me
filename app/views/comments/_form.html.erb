@@ -1,0 +1,19 @@
+<%= form_for([@project, @comment]) do |f| %>
+  <%= render "shared/errors", object: @comment %>
+  
+     <div class='form-group'>
+        <%#= f.label :name %>
+         <%= f.text_field :name, autofocus: true, placeholder: "Enter Your name", class: "form-control" %>
+          <%= f.text_field :email,  placeholder: "Enter Your email", class: "form-control" %>
+          <%= f.text_area :remark, cols: 30, rows: 4, placeholder: "Tell us your honest opinion about this project", class: "form-control" %>
+    </div>
+
+    <div class='form-group'>
+        <%#= f.label :remark %>
+         
+    </div>
+    <div class='form-group text-center'>
+       <%= f.submit 'Post Review', class: "btn btn-info" %>
+      <%= link_to "Cancel", @project, class: 'btn btn-default' %>
+    </div>
+<% end %> 

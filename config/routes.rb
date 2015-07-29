@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
 
+  
   resources :developers
 
   get '/contact' => 'contacts#new'
 
   resources :contacts
 
-  resources :projects
+  resources :projects do
+    resources :comments
+  end
 
   root "pages#home"
   get "/about" => "pages#about"

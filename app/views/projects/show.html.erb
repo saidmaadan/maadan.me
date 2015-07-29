@@ -63,6 +63,7 @@
 			</div>
 		</div>
 		<div class='col-sm-3 hidden-xs'>
+		<%= render partial: 'comments/form' %>
 			<h2 class='text-center'>Related Projects</h2><hr>
 			<% @projects.each_slice(1) do |project| %>
 				<% project.each do |project| %>

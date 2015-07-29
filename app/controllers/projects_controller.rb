@@ -9,8 +9,11 @@ class ProjectsController < ApplicationController
 
 
   def show
-  	@projects = Project.order("created_at DESC").limit(3)
+  	@comment = Comment.new
+  	@projects = Project.all.limit(2).shuffle
     @project = Project.friendly.find(params[:id])
+    @comment.project_id = @project_id
+    @comments = Comment.where(project_id: @project.id).order("created_at DESC")
   end
     
 	def new
@@ -47,6 +50,6 @@ class ProjectsController < ApplicationController
 
 	private
 	def project_params
-		params.require(:project).permit(:name, :description, :url, :github, :builtwith, :screenshot)
+		params.require(:project).permit(:name, :description, :url, :github, :builtwith, :screenshot, :roles)
 	end
 end
