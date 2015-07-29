@@ -1,10 +1,14 @@
 <div class='container'>
-	<div class='row'>
-		<div class='col-sm-6 col-offset-3 col-xs-12'>
-			<div class="well">
-				
-				<h2>Welcome <%= @developer.name%></h2>
-			</div>
+	<div class='row dev-profile'>
+		<div class='col-sm-8 col-sm-offset-2'>
+			<div class='row'>
+				<div class='col-sm-4'>
+					<p><%= profile_image_for@developer, size: 200 %></p>
+				</div>
+				<div class='col-sm-8'>
+					<h2>Welcome <%= @developer.name%></h2>
+				</div>
+          	</div>
 		</div>
 	</div>
 </div>

@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   before_action :require_admin, except: [:index, :show]
 	
 	def index
-		@projects = Project.all
+		@projects = Project.order("created_at DESC")
 	end
 
 

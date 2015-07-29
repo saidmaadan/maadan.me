@@ -1,7 +1,7 @@
 class DevelopersController < ApplicationController
 	#before_action :require_signin, except: [:new, :create]
   # before_action :correct_user, only: [:edit, :update]
-  #before_action :require_admin
+  before_action :require_admin
 
 
   def index

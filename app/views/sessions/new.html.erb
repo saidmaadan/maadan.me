@@ -1,12 +1,12 @@
 <div class='container'>
-  <div class='row main-session'>
+  <div class='row main-session dev-profile'>
     
         <% if current_developer %>
           <h2>You already sign in</h2>
         <% else %>
-          <div class='col-sm-6 col-offset-3 col-xs-12'>
+          <div class='col-sm-6 col-sm-offset-3 col-xs-12'>
             <header id="content-header">
-              <h1>Sign In</h1>
+              <h1>Admin Login</h1>
             </header>
 
             <%= form_tag(session_path) do %>
