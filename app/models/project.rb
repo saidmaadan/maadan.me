@@ -9,4 +9,12 @@ class Project < ActiveRecord::Base
   	def recent_comments
     	comments.order('created_at desc')
   	end
+
+  	def self.toShuffle
+  	  projects = all.limit(3).shuffle
+  	  projects.select do |p| p.name != p
+  	  	projects
+  	  end
+  	end
+
 end

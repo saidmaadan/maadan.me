@@ -13,9 +13,9 @@ class CommentsController < ApplicationController
   def create
     @comment = @project.comments.new(comment_params)
     #@comment.user = current_user
-      if @comment.save
+    if @comment.save
       redirect_to project_path(@project),
-                    notice: "Thanks for your comment!"
+                  notice: "Thanks for your comment!"
     else
       render :new
     end
