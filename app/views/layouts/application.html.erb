@@ -2,12 +2,14 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Portfolio" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Portfolio" %>">
+    <title><%= content_for?(:title) ? yield(:title) : "Said Maadan::Ruby on Rails, AngularJS " %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Said Maadan::Full Stack Web Developer | Ruby on Rails, AngularJS Developer in Austin Texas " %>">
+    <meta name="author" content="Said Maadan">
      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Slab">
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'favicon.ico' %>
   </head>
   <body>
     <header>
