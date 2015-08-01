@@ -628,27 +628,73 @@ nav li .fa:hover {
 
 .about-main{
   width: 100%;
-  height: 100%;
+  //height: 100%;
   top: 0;
   bottom: 0;
   background-image: url("https://s3.amazonaws.com/maadan/ms.png");
-  // top: 0;
-  // bottom: 0;
+  //position: relative;
+  top: 0;
+  bottom: 0;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   .about-content{
     margin: 150px auto;
+    section {
+      position: relative;
+      margin-bottom: 40px;
+      padding: 40px;
+      background-color: #afabac;
+    }
+  section:last-child {
+    margin-bottom: 0;
+  }
+  section:before, section:after {
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    right: 0;
+    content: "";
+  }
+  section:before {
+    border-top: solid 20px #afabac;
+    border-right: solid 20px #afabac;
+    border-left: solid 20px transparent;
+    border-bottom: solid 20px transparent;
+  }
+  section:after {
+    border-bottom: solid 20px #000;
+    border-left: solid 20px #000;
+    border-right: solid 20px transparent;
+    border-top: solid 20px transparent;
+  }
+    .content-left {
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      border-radius: 10px;
+    }
+    .content-left:after {
+      -webkit-border-radius: 0 0 0 10px;
+      -moz-border-radius: 0 0 0 10px;
+      -ms-border-radius: 0 0 0 10px;
+      -o-border-radius: 0 0 0 10px;
+      border-radius: 0 0 0 10px;
+    }
     .content-left p{
       font-size: 1.3em;
-      font-weight: 400;
+      font-weight: 600;
       font-family: "Shift", sans-serif;
       color: gray;
     }
     
   }
 }
+
 footer{
   border-top: solid 2px gray;
   margin-top:250px;
