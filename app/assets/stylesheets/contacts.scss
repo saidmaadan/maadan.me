@@ -29,16 +29,28 @@
 		margin-top: 20px;
 
 	}
+	.panel-danger {
+    	border-color: #bbb;
+	}
+	.panel-danger > .panel-heading {
+	    color: #bbb;
+	    background-color: #000;
+	    border-color: #bbb;
+	    text-align: center;
+	}
+	.panel-body{
+		background-color: #000;
+	}
 	.contact-map{
-		height: 550px;
+		height: 480px;
 		margin-bottom: 30px;
 		iframe{
 			width: 100%;
-			height: 550px;
+			height: 480px;
 			margin-top: 20px;
 		}
 		
-		#map iframe { position:absolute; top:0; bottom:0; width:100%; height: 520px; }
+		#map iframe { position:absolute; top:0; bottom:0; width:100%; height: 480px; }
 	}
 }
 

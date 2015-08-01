@@ -28,23 +28,37 @@
 	<div class='row contact-main-top'>
 		
 		<div class='col-sm-6 contact-contact'>
-			<div class='well'>
+
+		<div class="panel panel-danger">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Get in Touch and Say Hello</h2>
+                </div>
+			<div class='panel-body'>
 				<%= form_for @contact do |f| %>
 					<div class='form-group'>
-						<%= f.label :name %>
-						<%= f.text_field :name, class: 'form-control' %>
+						<%#= f.label :name, class: 'control-label' %>
+						 <div class="input-group">
+                          <span class="input-group-addon"><i class='fa fa-user'></i></span>
+							<%= f.text_field :name, class: 'form-control', placeholder: 'Kelsey Miller' %>
+						</div>
 					</div>
 					<div class='form-group'>
-						<%= f.label :email %>
-						<%= f.text_field :email, class: 'form-control' %>
+						<%#= f.label :email %>
+						 <div class="input-group">
+                          <span class="input-group-addon"><i class='fa fa-envelope'></i></span>
+							<%= f.text_field :email, class: 'form-control', placeholder: 'yourname@company.com' %>
+						</div>
 					</div>
 					<div class='form-group'>
-						<%= f.label :website %>
-						<%= f.text_field :website, class: 'form-control' %>
+						<%#= f.label :website %>
+						<div class="input-group">
+                          <span class="input-group-addon"><i class='fa fa-link'></i></span>
+							<%= f.text_field :website, class: 'form-control', placeholder: 'http://yourcompany.com' %>
+						</div>
 					</div>
 					<div class='form-group'>
-						<%= f.label :comments %>
-						<%= f.text_area :comments, class: 'form-control', cols: 40, rows: 7 %>
+						<%= f.label :comments, 'Message' %>
+							<%= f.text_area :comments, class: 'form-control', cols: 40, rows: 7 %>
 					</div>
 					<div class='form-group'>
 						<%= f.submit 'Send Message', class: 'btn btn-danger' %>
@@ -52,6 +66,7 @@
 					</div>
 				<% end %>
 			</div>
+		</div>
 		</div>
 		<div class='col-sm-6 contact-map'>
 			<div id='map'>
