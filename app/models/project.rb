@@ -4,7 +4,7 @@ class Project < ActiveRecord::Base
 	extend FriendlyId
   	friendly_id :name, use: :slugged
 
-  	has_many :comments, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   	def recent_comments
     	comments.order('created_at desc')

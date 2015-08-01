@@ -5,44 +5,79 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.project-display{
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  background: #d9534f url("https://s3.amazonaws.com/maadan/ms/deve10.jpg") repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
+	.project-show{
+		margin: 100px auto;
+		
+		h3 a{
+			color: gray;
+			font-size: 1.6em;
+			font-weight: 900;
+		}
+		h4{
+			a{
+			text-align: center;
+			color: #d9534f;
+			font-weight: 900;
+			}
+		}
+			
+	}
+}
+.project-home-show{
+	// padding-bottom: 100px;
+	border-radius: 15px;
+}
+  
 .project-home{
+	background: #fff;
 	margin-top: 60px;
-	h3 a{
+	padding-bottom: 100px;
+	.project-display-showme{
+		margin: 20px auto 40px;
+		padding-bottom: 40px;
+		h3 a{
 		color: gray;
 		font-size: 1.6em;
 		font-weight: 900;
-	}
-	h4{
-		a{
-		text-align: center;
-		color: #d9534f;
-		font-weight: 900;
 		}
-	}
-		
-}
-.project-show{
-	margin-top: 100px;
-	h3 a{
-		color: gray;
-		font-size: 1.6em;
-		font-weight: 900;
-	}
-	h4{
-		a{
-		text-align: center;
-		color: #d9534f;
-		font-weight: 900;
+		h4{
+			a{
+			text-align: center;
+			color: #d9534f;
+			font-weight: 900;
+			}
 		}
-	}
-		
+		kbd{
+			color: #d9534f;
+		}
+	}	
 }
+
 .project-content{
 	h3{
 		color: #5bc0de;
 		font-size: 1.4em;
 		font-weight: 900;
 	}
+	kbd {
+		  padding: 2px 10px;
+		  font-size: 90%;
+		  color: #ddd;
+		  background-color: #d9534f;
+		  border-radius: 3px;
+		  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+		}
 	p a{
 			color: #d9534f;	
 			font-size: 1.3em;
@@ -119,7 +154,7 @@
 }
 
 .photo-type-line .photo-hover .mask{
-	background:#296294;
+	background:#d9534f;
 	filter:alpha(opacity=50);
 	opacity:0.5;
 	z-index:0;
@@ -162,3 +197,4 @@
 #project-back{
 	margin-top: 25px;
 }
+

@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
 
 	before_action :set_project
+  before_action :require_admin, only: [:show, :edit, :delete]
 
   def index
     @comments = @project.comments
@@ -9,6 +10,7 @@ class CommentsController < ApplicationController
   def new
     @comment = @project.comments.new
   end
+  
 
   def create
     @comment = @project.comments.new(comment_params)

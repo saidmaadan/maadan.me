@@ -1,147 +1,158 @@
-
-<div class='container'>
-<%= link_to "Back to Projects List", projects_path, class: 'btn btn-info btn-lg', id: "project-back" %>
-	<div class='row project-home'>
-		<div class='col-sm-9 col-xs-12'>
-			<div class='row'>
-				<div class='col-sm-12'>
-					<%= image_tag @project.screenshot_url, class: 'img-responsive', style: "width:100%;" %>
-				</div>
-			</div>
-			<div class='row'>
-				<div class='col-sm-12 project-content'>
+<!-- <div class='project-display-show'> -->
+	<div class='container'>
+	<%= link_to "Back to Projects List", projects_path, class: 'btn btn-danger btn-lg', id: "project-back" %>
+	<div class='project-home-show'>
+			<div class='row project-home'>
+				<div class='col-sm-9 col-xs-12'>
 					<div class='row'>
-						<h3 class='text-center'><%= link_to @project.name, @project.url, target: "_blank" %></h3>
-						<div class='col-sm-12'>
+						<div class='col-sm-12 project-display-showme'>
+							<%= image_tag @project.screenshot_url, class: 'img-responsive', style: "width:100%;" %>
+						</div>
+					</div>
+					<div class='row'>
+						<div class='col-sm-12 project-content'>
 							<div class='row'>
-								<div class='col-sm-3 col-xs-5'><br>
-									<h3>About <%= @project.name %></h3>
-								</div>
-								<div class='col-sm-9 col-xs-7'><br>
-									<p><%= @project.description %></p>
-								</div>
-							</div>
-							<div class='row'>
-								<div class='col-sm-3 col-xs-5'>
-									<h3>Built With:</h3>
-								</div>
-								<div class='col-sm-9 col-xs-7'><br>
-									<kbd><%= @project.builtwith %></kbd>
-								</div>
-							</div>
-							<div class='row'>
-								<div class='col-sm-3 col-xs-5'>
-									<h3>Project Link:</h3>
-								</div>
-								<div class='col-sm-9 col-xs-7'><br>
-									<p><%= link_to @project.url, @project.url, target: "_blank" %></p>
-								</div>
-							</div>
-							<!-- <div class='row'>
-								<%# if @project.github %>
-									<div class='col-sm-3 col-xs-5'>
-										<h3>Github Link:</h3>
+								<h3 class='text-center'><%= link_to "About #{@project.name}", @project.url, target: "_blank" %></h3>
+								<div class='col-sm-12'>
+									<div class='row'>
+										<div class='col-sm-3 col-xs-5'><br>
+											<h3>Description</h3>
+										</div>
+										<div class='col-sm-9 col-xs-7'><br>
+											<p><%= @project.description %></p>
+										</div>
 									</div>
-									<div class='col-sm-9 col-xs-7'><br>
-										<p><%#= link_to @project.github, @project.github, target: "_blank" %></p>
+									<div class='row'>
+										<div class='col-sm-3 col-xs-5'>
+											<h3>My Roles:</h3>
+										</div>
+										<div class='col-sm-9 col-xs-7'><br>
+											<p><%= @project.roles %></p>
+										</div>
 									</div>
-								<%# end %>
-							</div> -->
-							<div class='row'>
-								<div class='col-sm-3 col-xs-5'>
-									
-								</div>
-								<div class='col-sm-9 col-xs-7'><br>
-									 <% if current_developer_admin? %>
-								          <%= link_to "Edit", edit_project_path(@project), class: 'btn btn-info' %>
-								           <%= link_to "Delete", project_path(@project), method: :delete, data: {confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-								      <% end %>
-								</div>
-							</div><br>
+									<div class='row'>
+										<div class='col-sm-3 col-xs-5'>
+											<h3>Built With:</h3>
+										</div>
+										<div class='col-sm-9 col-xs-7'><br>
+											<kbd><%= @project.builtwith %></kbd>
+										</div>
+									</div>
+									<div class='row'>
+										<div class='col-sm-3 col-xs-5'>
+											<h3>Project Link:</h3>
+										</div>
+										<div class='col-sm-9 col-xs-7'><br>
+											<p><%= link_to @project.url, @project.url, target: "_blank" %></p>
+										</div>
+									</div>
+									<!-- <div class='row'>
+										<%# if @project.github %>
+											<div class='col-sm-3 col-xs-5'>
+												<h3>Github Link:</h3>
+											</div>
+											<div class='col-sm-9 col-xs-7'><br>
+												<p><%#= link_to @project.github, @project.github, target: "_blank" %></p>
+											</div>
+										<%# end %>
+									</div> -->
+									<div class='row'>
+										<div class='col-sm-3 col-xs-5'>
+											
+										</div>
+										<div class='col-sm-9 col-xs-7'><br>
+											 <% if current_developer_admin? %>
+										          <%= link_to "Edit", edit_project_path(@project), class: 'btn btn-info' %>
+										           <%= link_to "Delete", project_path(@project), method: :delete, data: {confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+										      <% end %>
+										</div>
+									</div><br>
 
-						<div class='col-sm-12'>
-							<div class='row'>
-								<%if @comments.any? %>
-									<h3 class='text-center'>What people say about <%= @project.name %>!</h3><hr>
-									<!-- <div class='project-comment'> -->
-										 <% @comments.each do |c| %>
-											<div class='row'>
-												<div class='col-sm-2 col-xs-3'>
-													<%= profile_image_for c, class: 'img-responsive', style: 'width:100%;height:50px;border-radius:50px;' %>
-												</div>
-												<div class='col-sm-10 col-xs-9'>
-													<%= c.name %><br>
-													<%= c.remark %>
-												</div>
-											</div><hr>
+								<div class='col-sm-12'>
+									<div class='row'>
+										<%if @comments.any? %>
+											<h3 class='text-center'>What people say about <%= @project.name %>!</h3><hr>
+											<!-- <div class='project-comment'> -->
+												 <% @comments.each do |c| %>
+													<div class='row'>
+														<div class='col-sm-2 col-xs-3'>
+															<%= profile_image_for c, class: 'img-responsive', style: 'width:100%;height:50px;border-radius:50px;' %>
+														</div>
+														<div class='col-sm-10 col-xs-9'>
+															<%= c.name %><br>
+															<%= c.remark %>
+														</div>
+													</div><hr>
+												<% end %>
+											<!-- </div> -->
 										<% end %>
-									<!-- </div> -->
-								<% end %>
-							</div>
+									</div>
 
-							<div class='row'>
+									<div class='row'>
 
-								<h3 class='text-center'>Tell us what you think about <%= @project.name %> </h3>
-								<%= form_for([@project, @comment]) do |f| %>
-	  							<%= render "shared/errors", object: @comment %>
-	  								
-	  								<div class='row'>
-	  									
-		  									<div class='col-sm-6 col-xs-12'>
-			  									<div class='form-group'>
-			  										<%= f.text_field :name, autofocus: true, placeholder: "Enter Your name", class: "form-control" %>
+										<h3 class='text-center'>Tell us what you think about <%= @project.name %> </h3>
+										<%= form_for([@project, @comment]) do |f| %>
+			  							<%= render "shared/errors", object: @comment %>
+			  								
+			  								<div class='row'>
+			  									
+				  									<div class='col-sm-6 col-xs-12'>
+					  									<div class='form-group'>
+					  										<%= f.text_field :name, autofocus: true, placeholder: "Enter Your name", class: "form-control" %>
+					  									</div>
+					  								</div>
+				  									<div class='col-sm-6 col-xs-12'>
+				  										<div class='form-group'>
+				  										 	<%= f.text_field :email,  placeholder: "Enter Your email", class: "form-control" %>
+				  										</div>
+				  									</div>
 			  									</div>
-			  								</div>
-		  									<div class='col-sm-6 col-xs-12'>
-		  										<div class='form-group'>
-		  										 	<%= f.text_field :email,  placeholder: "Enter Your email", class: "form-control" %>
-		  										</div>
-		  									</div>
-	  									</div>
-	  								<br>
+			  								<br>
 
-	  								<div class='row'>
-	  									<div class='col-sm-12'>
-	  										<div class='form-group'>
-	  										 	<%= f.text_area :remark, cols: 30, rows: 4, placeholder: "Tell us your honest opinion about this project", class: "form-control" %>
-	  										</div>
-	  									</div>
-	  								</div><br>
-	  								<div class='row'>
-	  									 <div class='form-group text-center'>
+			  								<div class='row'>
 			  									<div class='col-sm-12'>
-			  										 <%= f.submit 'Post Review', class: "btn btn-info" %>
-									      		<%= link_to "Cancel", @project, class: 'btn btn-default' %>
+			  										<div class='form-group'>
+			  										 	<%= f.text_area :remark, cols: 30, rows: 4, placeholder: "Tell us your honest opinion about this project", class: "form-control" %>
+			  										</div>
 			  									</div>
+			  								</div><br>
+			  								<div class='row'>
+			  									 <div class='form-group text-center'>
+					  									<div class='col-sm-12'>
+					  										 <%= f.submit 'Post Review', class: "btn btn-info" %>
+											      		<%= link_to "Cancel", @project, class: 'btn btn-default' %>
+					  									</div>
+					  								</div>
 			  								</div>
-	  								</div>
-						    <% end %> 
+								    <% end %> 
+									</div>
+								</div>
+							
+
 							</div>
 						</div>
+					</div>
 					
-
 					</div>
 				</div>
-			</div>
-			
-			</div>
-		</div>
-		<div class='col-sm-3'>
-			<div class='row'>
-				<div class='col-sm-12 hidden-xs'>
-					<h2 class='text-center'>Related Projects</h2><hr>
-					<% @projects.each_slice(1) do |project| %>
-						<% project.each do |project| %>
-							<h4 class='text-center'><%= link_to project.name, project %></h4>
-							<%= link_to project do %>
-								<%= image_tag project.screenshot_url, class: 'img-responsive', style: "width:100%;height:250px;" %>
+				<div class='col-sm-3'>
+					<div class='row'>
+						<div class='col-sm-12 hidden-xs'>
+							<h2 class='text-center'>Related Projects</h2><hr>
+							<% @projects.each_slice(1) do |project| %>
+								<% project.each do |project| %>
+									<h4 class='text-center'><%= link_to project.name, project %></h4>
+									<%= link_to project do %>
+										<%= image_tag project.screenshot_url, class: 'img-responsive', style: "width:100%;height:250px;" %>
+									<% end %>
+								<% end %>
 							<% end %>
-						<% end %>
-					<% end %>
+						</div>
+					</div><br>
+					
+					
 				</div>
-			</div><br>
-			
-			
+			</div>
 		</div>
 	</div>
 </div>

@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require menu
-//= require turbolinks
 //= require bootstrap-sprockets
 //= require lightbox
 //= require_tree .

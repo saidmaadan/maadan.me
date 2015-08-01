@@ -41,13 +41,13 @@
 <nav id="c-menu--slide-left" class="c-menu c-menu--slide-left">
   <button class="c-menu__close">&larr; <i class='fa fa-times fa-2x'></i></button>
   <ul class="c-menu__items">
-    <li class="c-menu__item"><%= link_to ' HOME', root_path, class: "c-menu__link fa fa-home" %></li>
-    <li class="c-menu__item"><%= link_to ' About', about_path, class: "c-menu__link fa fa-male " %></li>
-    <li class="c-menu__item"><%= link_to ' Projects', projects_path, class: "c-menu__link fa fa-database" %></li>
-    <li class="c-menu__item"><%= link_to ' Contact', contact_path, class: "c-menu__link fa fa-envelope" %></li>
+    <li class="c-menu__item"><%= link_to '  HOME', root_path, class: "c-menu__link fa fa-home" %></li>
+    <li class="c-menu__item"><%= link_to '  ABOUT', about_path, class: "c-menu__link fa fa-male " %></li>
+    <li class="c-menu__item"><%= link_to '  PROJECTS', projects_path, class: "c-menu__link fa fa-database" %></li>
+    <li class="c-menu__item"><%= link_to '  CONTACT', contact_path, class: "c-menu__link fa fa-envelope" %></li>
     <% if current_developer %>
-      <li class="c-menu__item"><%= link_to ' Add Project', new_project_path, class: "c-menu__link fa fa-folder-open " %></li>
-      <li class="c-menu__item"><%= link_to ' Sign Out', session_path, method: :delete, class: "c-menu__link fa fa-cut " %></li>
+      <li class="c-menu__item"><%= link_to '  Add Project', new_project_path, class: "c-menu__link fa fa-folder-open " %></li>
+      <li class="c-menu__item"><%= link_to '  Sign Out', session_path, method: :delete, class: "c-menu__link fa fa-cut " %></li>
     <% end %>
      
   </ul>

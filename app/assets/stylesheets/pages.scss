@@ -60,14 +60,7 @@ body {
 
 body {
   color: #6d6d6d;
-  //background-color: #ddd;
-  background-image: #ddd url("https://s3.amazonaws.com/maadan/bg-bottom.jpg");
-  // // right: 0;
-  // left: 0;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: #000;
   font-family: "Oxygen", Helvetica, sans-serif;
   font-size: 14px;
   line-height: 1.8;
@@ -273,7 +266,7 @@ img {
 .c-menu {
   position: fixed;
   z-index: 200;
-  background-color: #5bc0de;
+  background-color: #000;
   -webkit-transition: -webkit-transform 0.3s;
           transition: transform 0.3s;
 }
@@ -311,8 +304,8 @@ img {
 .c-menu--slide-left .c-menu__item{
   display: block;
   text-align: center;
-  border-top: solid 1px #ddd;
-  border-bottom: solid 1px #ddd;
+  border-top: solid 1px gray;
+  border-bottom: solid 1px gray;
 }
 .c-menu--slide-left .c-menu__item:first-child{
   border-top: none;
@@ -480,7 +473,7 @@ body.has-active-menu {
   }
 
   .c-hamburger--htla {
-    background-color: #5bc0de;
+    background-color: #d9534f;
   }
 
   .c-hamburger--htla span {
@@ -499,7 +492,7 @@ body.has-active-menu {
 
   /* active state, i.e. menu open */
   .c-hamburger--htla.is-active {
-    background-color: #d9534f;
+    background-color: #000;
   }
 
   .c-hamburger--htla.is-active span {
@@ -579,12 +572,21 @@ body.has-active-menu {
     display: none;
   }
 }
+nav li a{
+  padding-left: 15px;
+}
+nav li .fa:hover {
+  color: gray;
+  background: #d9534f;
+  text-decoration: none;
+  font-weight: 900;
+}
 .jumbotron{
   width: 100%;
   height: 100%;
   top: 0;
   bottom: 0;
-  background-image: url("https://s3.amazonaws.com/inventtive/img/dev3.jpg");
+  background: #000 url("https://s3.amazonaws.com/maadan/ms/dev01.jpg");
   // position: relative;
   // // right: 0;
   // left: 0;
@@ -594,21 +596,32 @@ body.has-active-menu {
   background-size: cover;
   // overflow: hidden;
   .top-home{
-     position: relative;
-     top: 25%;
-     bottom: 30%;
+    margin: 10% auto;
+     // position: relative;
+     // top: 25%;
+     // bottom: 30%;
     h1{
       font-size: 5em;
       font-weight: 900;
       font-family: "Shift", sans-serif;
       color: #d9534f;
+      text-transform: uppercase;
     }
-    p{
-      margin-top: -20px;
+    h4{
       font-size: 2.5em;
       font-weight: 900;
       font-family: "Shift", sans-serif;
-      color: gray;
+      color: #ddd;
+      span{
+        color: #296294;
+      }
+    }
+    p{
+      margin-top: -1px;
+      font-size: 2em;
+      font-weight: 900;
+      font-family: "Shift", sans-serif;
+      color: #ddd;
     }
   }
 }
@@ -616,15 +629,17 @@ body.has-active-menu {
 .about-main{
   width: 100%;
   height: 100%;
+  top: 0;
+  bottom: 0;
   background-image: url("https://s3.amazonaws.com/maadan/ms.png");
-  // // right: 0;
-  // left: 0;
+  // top: 0;
+  // bottom: 0;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   .about-content{
-    margin: 15% auto 20px;
+    margin: 150px auto;
     .content-left p{
       font-size: 1.3em;
       font-weight: 400;
@@ -635,10 +650,10 @@ body.has-active-menu {
   }
 }
 footer{
-  border-top: solid 2px #68b9ea;
+  border-top: solid 2px gray;
   margin-top:250px;
   text-align: center;
-  color: #000;
+  color: gray;
   .footer{
     margin-top:15px;
     font-size: 1.3em;
@@ -651,4 +666,9 @@ footer{
 
 #comments-section{
   display: none;
+}
+.error_message ul li{
+  list-style-type: none;
+  color: #d9534f;
+  font-size: 17px;
 }
