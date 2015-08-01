@@ -3,7 +3,7 @@
 		<div class='row project-show'>
 			<% @projects.each_slice(3) do |project| %>
 				<% project.each do |project| %>
-					<div class="col-sm-4 col-xs-12">
+					<div class="col-md-4 col-sm-6 col-xs-12">
 						<h3 class='text-center'><%= link_to project.name, project %></h3>
 						<div class="photo photo-type-line">
 		            		<a href="<%= project.screenshot.url   %>" class="photo-hover" data-lightbox="my-images" data-title="<%= project.name %>">
